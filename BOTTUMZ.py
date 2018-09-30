@@ -16,14 +16,14 @@ Cara Install Self Bot :
 - Ketik -> `pip3 install pytz`
 - Ketik -> `pip3 install humanfriendly`
 - Ketik -> `pip3 install googletrans`
-- Ketik -> `git clone https://github.com/Nadyatjia/BotLinePython3`
+- Ketik -> `git clone https://github.com/BOTTUMZ/BotLinePython3`
 - Ketik -> `cd BotLinePython3`
-- Ketik -> `python3 Nadyasb.py`
+- Ketik -> `python3 BOTTUMZ.py`
 
 Cara Menjalankan Bot Kembali :
 ------
 - Ketik -> `cd LineBotPython3`
-- Ketik -> `python3 Nadyasb.py`
+- Ketik -> `python3 BOTTUMZ.py`
 
 
 Credit By@ Nadya Sutjiadi.
