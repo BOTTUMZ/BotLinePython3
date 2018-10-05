@@ -570,10 +570,10 @@ def lineBot(op):
                 if text is None:
                     return
 #==============================================================================#
-                if text.lower() == 'help':
+                if text.lower() == 'คำสั่ง':
                     helpMessage = helpmessage()
                     nadya.sendMessage(to, str(helpMessage))
-                    nadya.sendContact(to, "u14f64e139a3817afaabe27d237afb36b")
+                    nadya.sendContact(to, "u9c1a8823e7b9605e031c9f7d39acaa4c")
                 elif text.lower() == 'texttospeech':
                     helpTextToSpeech = helptexttospeech()
                     nadya.sendMessage(to, str(helpTextToSpeech))
@@ -600,7 +600,7 @@ def lineBot(op):
                 elif text.lower() == 'about':
                     try:
                         arr = []
-                        owner = "u14f64e139a3817afaabe27d237afb36b"
+                        owner = "u9c1a8823e7b9605e031c9f7d39acaa4c"
                         creator = nadya.getContact(owner)
                         contact = nadya.getContact(nadyaMID)
                         grouplist = nadya.getGroupIdsJoined()
@@ -619,7 +619,7 @@ def lineBot(op):
                     except Exception as e:
                         nadya.sendMessage(msg.to, str(e))
 #==============================================================================#
-                elif text.lower() == 'status':
+                elif text.lower() == 'การป้องกัน':
                     try:
                         ret_ = "╔══[ Status ]"
                         if settings["protect"] == True: ret_ += "\n╠ Protect ✅"
@@ -1011,7 +1011,7 @@ def lineBot(op):
                         for ls in lists:
                             ret_ += "\n{}" + ls
                         nadya.sendMessage(msg.to, str(ret_))
-                elif msg.text.lower().startswith("stealname "):
+                elif msg.text.lower().startswith("ดูชื่อ "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -1023,7 +1023,7 @@ def lineBot(op):
                         for ls in lists:
                             contact = nadya.getContact(ls)
                             nadya.sendMessage(msg.to, "[ Display Name ]\n" + contact.displayName)
-                elif msg.text.lower().startswith("stealbio "):
+                elif msg.text.lower().startswith("ดูสถานะ "):
                     if 'MENTION' in msg.contentMetadata.keys()!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -1147,20 +1147,20 @@ def lineBot(op):
                             settings["mimic"]["status"] = False
                             nadya.sendMessage(msg.to,"Reply Message off")
 #==============================================================================#
-                elif text.lower() == 'groupcreator':
+                elif text.lower() == 'เจ้าของกลุ่ม':
                     group = nadya.getGroup(to)
                     GS = group.creator.mid
                     nadya.sendContact(to, GS)
                 elif text.lower() == 'groupid':
                     gid = nadya.getGroup(to)
                     nadya.sendMessage(to, "[ID Group : ]\n" + gid.id)
-                elif text.lower() == 'grouppicture':
+                elif text.lower() == 'รูปกลุ่ม':
                     group = nadya.getGroup(to)
                     path = "http://dl.profile.line-cdn.net/" + group.pictureStatus
                     nadya.sendImageWithURL(to, path)
-                elif text.lower() == 'groupname':
+                elif text.lower() == 'ชื่อกลุ่ม':
                     gid = nadya.getGroup(to)
-                    nadya.sendMessage(to, "[Nama Group : ]\n" + gid.name)
+                    nadya.sendMessage(to, "[ชื่อ กลุ่ม : ]\n" + gid.name)
                 elif text.lower() == 'groupticket':
                     if msg.toType == 2:
                         group = nadya.getGroup(to)
@@ -1215,7 +1215,7 @@ def lineBot(op):
                     ret_ += "\n╚══[ Finish ]"
                     nadya.sendMessage(to, str(ret_))
                     nadya.sendImageWithURL(to, path)
-                elif text.lower() == 'groupmemberlist':
+                elif text.lower() == 'รายชื่อทั้งหมด':
                     if msg.toType == 2:
                         group = nadya.getGroup(to)
                         ret_ = "╔══[ Member List ]"
@@ -1309,7 +1309,7 @@ def lineBot(op):
                                                 except:
                                                     nadya.sendMessage(msg.to,"") 
 #==============================================================================#          
-                elif text.lower() == 'mention':
+                elif text.lower() == '/1':
                     group = nadya.getGroup(msg.to)
                     nama = [contact.mid for contact in group.members]
                     k = len(nama)//100
